@@ -1,0 +1,4 @@
+CREATE DATABASE IF NOT EXISTS estudos;
+DROP DATABASE IF EXISTS estudos;
+
+show databases;
