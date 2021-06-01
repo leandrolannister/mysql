@@ -1,0 +1,6 @@
+/*Load of large files*/
+
+1-)Go to: c:\xamp\mysql\bin
+1-)mysql -u root -p
+2-)You are going to be in this path: mysql[none], change to use NOMEDATABASE. It must be like mysql[igsis]
+3-)sourece c:\temp\FILENAME.sql 
