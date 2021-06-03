@@ -1,0 +1,1 @@
+c:\xampp\mysql>mysqldump -u root -p  estoque > c:/temp/estoque.sql

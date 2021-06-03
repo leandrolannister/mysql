@@ -1,0 +1,26 @@
+use claudia;
+SELECT   
+  G.SY01_EMPRESA, 
+  G.SY40_GRUPO, 
+  G.SY44_DESCRICAO,
+  G.SY44_PROGRAMA,
+  G.MODULO,
+  G.NIVEL_1,
+  G.NIVEL_2,
+  G.DONO,
+  GU.NOME
+FROM grupos AS G INNER JOIN grupo_usuarios AS GU
+ON GU.SY40_GRUPO = G.SY40_GRUPO LIMIT 1358398
+into outfile 'file1.txt'
+FIELDS TERMINATED BY ';'
+ENCLOSED BY '"'
+
+
+
+
+
+
+ 
+
+ 
+ 

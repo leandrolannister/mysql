@@ -1,0 +1,4 @@
+mysql -u root -p estoque_restore < c:/temp/estoque.sql
+
+estoque_restore = nome do novo banco de dados.
+c:/temp/estoque.sql = Path do banco que será criado
