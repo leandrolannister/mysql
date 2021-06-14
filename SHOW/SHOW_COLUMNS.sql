@@ -1,0 +1,5 @@
+﻿use LIVROS;
+
+SHOW COLUMNS FROM series LIKE '%e';
+SHOW COLUMNS FROM series ;
+SHOW COLUMNS FROM series WHERE TYPE LIKE 'varchar%';
