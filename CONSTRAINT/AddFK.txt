@@ -1,0 +1,17 @@
+/******************RESPONSAVEIS/******************/ 
+CREATE TABLE IF NOT EXISTS 
+  D001_responsaveis(
+    D001_responsaveisID int auto_increment primary key, 
+    D001_AreasID int,
+    D001_SubareasID int,
+    D001_MotivosAreasID int,    
+    D001_usuarioID_1 int(4) unsigned,
+    D001_usuarioID_2 int(4) unsigned,
+    status boolean default 1,
+    created_at datetime DEFAULT CURRENT_TIMESTAMP,
+    updated_at datetime,
+    deleted_at datetime,
+    FOREIGN KEY(D001_AreasID)     REFERENCES D001_Areas(D001_AreasID),
+    FOREIGN KEY(D001_SubareasID)  REFERENCES D001_Subareas(D001_SubareasID),
+    FOREIGN KEY(D001_usuarioID_1)  REFERENCES T001_Usuarios(UsuarioID),
+    FOREIGN KEY(D001_usuarioID_2)  REFERENCES T001_Usuarios(UsuarioID)); 
