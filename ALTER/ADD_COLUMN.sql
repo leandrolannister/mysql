@@ -1,19 +1,14 @@
 DROP DATABASE IF EXISTS estudos;
-CREATE DATABASE IF NOT EXISTS estudos;
+CREATE DATABASE estudos;
 
 use estudos;
 
-CREATE TABLE livros
-(id tinyint auto_increment,
-nome varchar(50),
-PRIMARY KEY(id)) auto_increment = 5;
+CREATE TABLE produtos(id int auto_increment primary key,
+descricao varchar(2));
 
-INSERT INTO livros(nome) VALUES('Game of Thrones');
-INSERT INTO livros(nome) VALUES('Breaking Bad');
+ALTER TABLE produtos ADD COLUMN preco double(12,2);
 
-ALTER TABLE livros ADD COLUMN id_autor_fk int;
+INSERT INTO produtos(descricao, preco) VALUES('A', 12.30);
 
-SELECT nome, id_autor_fk FROM livros;
-
-
-
+SELECT descricao, preco FROM produtos;
+  
