@@ -1,38 +1,22 @@
-DROP DATABASE IF EXISTS estudos;
-CREATE DATABASE IF NOT EXISTS estudos;
+DROP DATABASE estudos;
+CREATE DATABASE estudos;
 
-use estudos;
+USE estudos;
 
-DROP TABLE if exists livros;
-DROP TABLE if exists autores;
+CREATE TABLE autores(id int auto_increment primary key,
+nome varchar(10));
 
-CREATE TABLE livros
-(id tinyint auto_increment,
-nome varchar(50),
-id_autor_fk smallint,
-PRIMARY KEY(id)) auto_increment = 5;
+CREATE TABLE livros(id int auto_increment,
+nome varchar(20) NOT NULL,
+autor_id int,
+foreign key(autor_id) REFERENCES autores(id),
+primary key(id));
 
-CREATE TABLE autores
-(id_autor smallint auto_increment,
-nome varchar(50),
-PRIMARY KEY(id_autor)) auto_increment = 5;
+INSERT INTO autores(nome) VALUES('Leandro');
+INSERT INTO autores(nome) VALUES('Soarees');
 
-insert into autores(nome) values('George R. R. Martin');
-insert into autores(nome) values('Mario puzzle');
-
-/*ADD CHAVE ESTRAGEIRA*/
-ALTER TABLE livros ADD FOREIGN KEY(id_autor_fk) REFERENCES autores(id_autor);
-
-insert into livros(nome, id_autor_fk) values('Game Of Thrones', 5);
-insert into livros(nome, id_autor_fk) values('Omerta', 6);
-
-SELECT * FROM LIVROS as l
-inner join AUTORES AS a
-on a.id_autor = l.id_autor_fk;
+INSERT INTO livros(nome, autor_id) VALUES('Got', 1);
+INSERT INTO livros(nome, autor_id) VALUES('God Father', 2);
 
 
-
-
-
-
-
+select * from livros;
